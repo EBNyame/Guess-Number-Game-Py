@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container fade-in">
+        <h1>🎯 Enter your name to start the game</h1>
+        <form method="POST">
+            <input type="text" name="name" placeholder="Your name..." required autofocus>
+            <button type="submit">Start Game</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess the Number</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container fade-in">
+        <h2>Hello {{ name }} 👋</h2>
+
+        {% if not won %}
+        <p>Guess a number between 0 and 100</p>
+        <form method="POST">
+            <input type="number" name="guess" required>
+            <button type="submit">Submit Guess</button>
+        </form>
+        {% endif %}
+
+        {% if message %}
+        <div class="message">{{ message }}</div>
+        {% endif %}
+
+        {% if won %}
+        <br>
+        <a href="{{ url_for('reset') }}">
+            <button>🔁 Restart Game</button>
+        </a>
+        {% endif %}
+    </div>
+</body>
+</html>
